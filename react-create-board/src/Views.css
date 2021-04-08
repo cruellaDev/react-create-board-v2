@@ -1,0 +1,17 @@
+.header {
+    display: block;
+    height: 80px;
+    width: 100%;
+}
+
+.sidebar {
+    display: inline-block;
+    height: calc(100% - 80px);
+    width: 200px;
+}
+
+.content {
+    display: inline-block;
+    height: calc(100% - 80px);
+    width: calc(100% - 200px);
+}
