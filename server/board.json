@@ -1,60 +1,60 @@
 {
-    "codes": [
-        {
-            "id": 1,
-            "value": "J",
-            "desc": "Journal"
-        },
-        {
-            "id": 2,
-            "value": "D",
-            "desc": "ToDo"
-        }
-    ],
-    "boards": [
-        {
-            "id": 1,
-            "name": "일기",
-            "insertDate": 1617351293396,
-            "updateDate": 1617351293396,
-            "code": "J"
-        },
-        {
-            "id": 2,
-            "name": "할일",
-            "insertDate": 1617351448578,
-            "updateDate": 1617351448578,
-            "code": "D"
-        }
-    ],
-    "articles": [
-        {
-            "id": 1,
-            "title": "오늘 명륜진사갈비감",
-            "content": "갈비맛있음",
-            "views": 0,
-            "insertDate": 1617351293396,
-            "updateDate": 1617351293396,
-            "boardId": 1
-        },
-        {
-            "id": 2,
-            "title": "내일 뭐 먹을지 정해야 함",
-            "content": "한식 중식 일식",
-            "views": 0,
-            "insertDate": 1617351448578,
-            "updateDate": 1617351448578,
-            "boardId": 2
-        }
-    ],
-    "comment": [
-        {
-            "id": 1,
-            "content": "내일은 뭐 먹지",
-            "insertDate": 1617351448578,
-            "updateDate": 1617351448578,
-            "boardId": 2,
-            "articleId": 1
-        }
-    ]
+  "codes": [
+    {
+      "id": 1,
+      "value": "J",
+      "desc": "Journal"
+    },
+    {
+      "id": 2,
+      "value": "D",
+      "desc": "ToDo"
+    }
+  ],
+  "boards": [
+    {
+      "id": 1,
+      "name": "일기",
+      "insertDate": 1617351293396,
+      "updateDate": 1617351293396,
+      "code": "J"
+    },
+    {
+      "id": 2,
+      "name": "할일",
+      "insertDate": 1617351448578,
+      "updateDate": 1617351448578,
+      "code": "D"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "오늘 명륜진사갈비감",
+      "content": "갈비맛있음",
+      "views": 3,
+      "insertDate": 1617351293396,
+      "updateDate": 1618315110704,
+      "boardId": 1
+    },
+    {
+      "id": 2,
+      "title": "내일 뭐 먹을지 정해야 함",
+      "content": "한식 중식 일식",
+      "views": 0,
+      "insertDate": 1617351448578,
+      "updateDate": 1617351448578,
+      "boardId": 2
+    }
+  ],
+  "comment": [
+    {
+      "id": 1,
+      "content": "내일은 뭐 먹지",
+      "insertDate": 1617351448578,
+      "updateDate": 1617351448578,
+      "boardId": 2,
+      "articleId": 1
+    }
+  ]
 }

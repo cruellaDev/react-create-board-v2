@@ -6,6 +6,7 @@ function Routes() {
     const ArticleList = lazy(() => import('../views/ArticleList'));
     const Article = lazy(() => import('../views/Article'));
     const Post = lazy(() => import('../views/Post'));
+    const Control = lazy(() => import('../views/Control'));
 
     return (
         <div>
@@ -14,8 +15,9 @@ function Routes() {
                     <Route path={"/"} exact component={Main} />
                     <Route path={"/board/:boardId"} exact component={ArticleList} />
                     <Route path={"/article/:articleId"} exact component={Article} />
-                    <Route path={"/insert/:articleId"} exact component={Post} />
+                    <Route path={"/insert"} exact component={Post} />
                     <Route path={"/update/:articleId"} exact component={Post} />
+                    <Route path={"/control"} exact component={Control} />
                     <Route path={"*"} component={Main} />
                 </Switch>
             </Suspense>

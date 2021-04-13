@@ -6,47 +6,46 @@ import { articleActions } from '../slices/articleSlice';
 function ArticleList() {
     const location = useLocation();
     const params = useParams();
-    // console.log(params);
-    // console.log(location);
     const { articleList, status, statusText } = useSelector((state) => state.articleReducer);
+    const boardList = useSelector((state) => state.boardReducer.boardList);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(articleActions.selectArticleList(params?.boardId ?? 0));
-    }, [dispatch, params?.boardId])
+        dispatch(articleActions.getArticleList(params?.boardId ?? 0));
+    }, [dispatch, params?.boardId]);
     return (
         <>
-            <div>
-                {location?.state?.name ?? ""}
-            </div>
             {
-                status === 0
-                ? (
-                    <div>
-                        Loading...
-                    </div>
-                ) : status === 200
-                ? (
+                status === 200 ?
                     <>
-                        { articleList.length > 0 ? (
+                        <div>
+                            <span>게시판: </span>
+                            <span>
+                                {
+                                    boardList.length > 0 &&
+                                    boardList.find((board) => board.id === parseInt(params?.boardId))?.name
+                                }
+                            </span>
+                        </div>
+                        { articleList.length > 0 ?
                             <div>
-                                <ul >
+                                <div>
                                     {
-                                        articleList.map((article, index) => (
-                                            <li  key={article?.id ?? index}>
-                                                <Link to={{ pathname: `/article/${article?.id ?? 0}` }}>
+                                        articleList.map((article, index) => 
+                                            <div  key={article?.id ?? index}>
+                                                <Link to={{ pathname: `/article/${article?.id ?? 0}`, state: location?.state }}>
                                                     <span>{article?.title ?? ""}</span>
                                                 </Link>
-                                            </li>
-                                        ))
+                                            </div>
+                                        )
 
                                     }
-                                </ul>
+                                </div>
                             </div>
-                        ) : (
+                        :
                             <div> 게시글이 없습니다. </div>
-                        )}
+                        }
                     </>
-                ) : (
+                :
                     <div>
                         <div>
                             <span>{status}</span>
@@ -55,7 +54,6 @@ function ArticleList() {
                             <span>{statusText}</span>
                         </div>
                     </div>
-                )
             }
         </>
     );

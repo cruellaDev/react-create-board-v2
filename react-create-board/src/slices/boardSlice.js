@@ -5,21 +5,37 @@ const name = "board";
 const initialState = {
     boardList: [],
     status: 0,
-    statusText: "Unknown"
+    statusText: "Loading"
 };
 
 const reducers = {
-    selectBoardList: (state, action) => {},
-    selectBoardListSccs: (state, action) => {
+    getBoardList: (state, action) => {},
+    getBoardListSuccess: (state, action) => {
         state.boardList = action.payload?.data ?? [];
         state.status = action.payload?.status;
-        state.statusText = action.payload?.statusText ?? "";
+        state.statusText = action.payload?.statusText ?? "Success";
     },
-    selectBoardListFail: (state, action) => {
+    getBoardListFail: (state, action) => {
         state.boardList = initialState.boardList
         state.status = action.payload?.status ?? 500;
         state.statusText = action.payload?.statusText ?? "Network Error";
     },
+
+    getBoard: (state, action) => {},
+    getBoardSuccess: (state, action) => {},
+    getBoardFail: (state, action) => {},
+
+    postBoard: (state, action) => {},
+    postBoardSuccess: (state, action) => {},
+    postBoardFail: (state, action) => {},
+
+    putBoard: (state, action) => {},
+    putBoardSuccess: (state, action) => {},
+    putBoardFail: (state, action) => {},
+
+    deleteBoard: (state, action) => {},
+    deleteBoardSuccess: (state, action) => {},
+    deleteBoardFail: (state, action) => {},
 };
 
 const boardSlice = createSlice({
