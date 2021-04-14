@@ -32,29 +32,37 @@
       "id": 1,
       "title": "오늘 명륜진사갈비감",
       "content": "갈비맛있음",
-      "views": 3,
+      "views": 18,
       "insertDate": 1617351293396,
-      "updateDate": 1618315110704,
+      "updateDate": 1618405311330,
       "boardId": 1
     },
     {
       "id": 2,
       "title": "내일 뭐 먹을지 정해야 함",
       "content": "한식 중식 일식",
-      "views": 0,
+      "views": 4,
       "insertDate": 1617351448578,
-      "updateDate": 1617351448578,
+      "updateDate": 1618385220602,
       "boardId": 2
     }
   ],
-  "comment": [
+  "comments": [
     {
       "id": 1,
       "content": "내일은 뭐 먹지",
       "insertDate": 1617351448578,
       "updateDate": 1617351448578,
       "boardId": 2,
-      "articleId": 1
+      "articleId": 2
+    },
+    {
+      "id": 2,
+      "content": "내일 뭐먹음",
+      "boardId": 1,
+      "articleId": 1,
+      "insertDate": 1618385359793,
+      "updateDate": 1618385359793
     }
   ]
 }

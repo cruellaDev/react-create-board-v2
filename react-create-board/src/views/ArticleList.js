@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { articleActions } from '../slices/articleSlice';
 
 function ArticleList() {
-    const location = useLocation();
     const params = useParams();
     const { articleList, status, statusText } = useSelector((state) => state.articleReducer);
     const boardList = useSelector((state) => state.boardReducer.boardList);
@@ -32,7 +31,7 @@ function ArticleList() {
                                     {
                                         articleList.map((article, index) => 
                                             <div  key={article?.id ?? index}>
-                                                <Link to={{ pathname: `/article/${article?.id ?? 0}`, state: location?.state }}>
+                                                <Link to={{ pathname: `/article/${article?.id ?? 0}` }}>
                                                     <span>{article?.title ?? ""}</span>
                                                 </Link>
                                             </div>

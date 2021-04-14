@@ -1,4 +1,4 @@
-import { all, call, retry, fork, put, take, select } from 'redux-saga/effects';
+import { all, call, retry, fork, put, take, select, getContext } from 'redux-saga/effects';
 import { articleActions } from '../slices/articleSlice';
 import axios from '../utils/axios';
 import history from '../utils/history';
@@ -30,8 +30,8 @@ function apiDeleteArticle(articleId) {
 // api 서버 연결 후 action 호출
 function* asyncGetArticleList(action) {
     try {
-        const response = yield call(apiGetArticleList, { boardId: action.payload });
-        // const response = yield retry(3, 10 * SECOND, apiGetArticleList, { boardId: action.payload });
+        // const response = yield call(apiGetArticleList, { boardId: action.payload });
+        const response = yield retry(3, 10 * SECOND, apiGetArticleList, { boardId: action.payload });
         if (response?.status === 200) {
             yield put(articleActions.getArticleListSuccess(response));
         } else {
@@ -142,6 +142,7 @@ function* asyncDeleteArticle() {
         const response = yield call(apiDeleteArticle, article?.id ?? 0);
         if (response?.status === 200) {
             yield put(articleActions.deleteArticleSuccess());
+            alert("삭제되었습니다!");
             history.push(`/board/${article?.boardId ?? 0}`);
         } else {
             yield put(articleActions.deleteArticleFail(response));

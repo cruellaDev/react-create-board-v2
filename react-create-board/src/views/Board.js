@@ -25,7 +25,7 @@ function Board() {
                                 boardList.length > 0 ?
                                 boardList.map((board) => (
                                     <li  key={board?.id}>
-                                        <Link to={{ pathname: `/board/${board?.id}`, state: board }}>
+                                        <Link to={{ pathname: `/board/${board?.id}` }}>
                                             <span>{board?.name}</span>
                                         </Link>
                                     </li>

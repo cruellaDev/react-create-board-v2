@@ -37,10 +37,10 @@ function Article() {
                         <div>
                             <span>게시판: </span>
                             <span>
-                            {
-                                boardList.length > 0 &&
-                                boardList.find((board) => board.id === parseInt(article?.boardId))?.name
-                            }
+                                {
+                                    boardList.length > 0 &&
+                                    boardList.find((board) => board.id === parseInt(article?.boardId))?.name
+                                }
                             </span>
                         </div>
                         <div>
