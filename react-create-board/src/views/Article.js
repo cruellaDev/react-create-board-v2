@@ -46,8 +46,8 @@ function Article() {
                         <div>
                             <div><span>제목: </span><span>{article?.title ?? ""}</span></div>
                             <div><span>조회수: </span><span>{article?.views ?? ""}</span></div>
-                            <div><span>작성일시: </span><span>{(article.insertDate) ? new Date(article?.insertDate).toLocaleString() : ""}</span></div>
-                            <div><span>내용: </span><span>{article?.content ?? ""}</span></div>
+                            <div><span>작성일시: </span><span>{(article?.insertDate) && new Date(article.insertDate).toLocaleString()}</span></div>
+                            <div><span>내용: </span><span>{article?.content?.split("\n")?.map(line => <span>{line}<br/></span>)}</span></div>
                         </div>
                         <div>
                             <Comment articleId={params?.articleId ?? 0} />
